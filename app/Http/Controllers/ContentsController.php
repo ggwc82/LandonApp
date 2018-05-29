@@ -9,6 +9,6 @@ class ContentsController extends Controller
     //
     public function home()
     {
-        return view('contents/show');
+        return view('contents/home');
     }
 }
