@@ -53,6 +53,6 @@ class ClientController extends Controller
 
     public function show($client_id)
     {
-        return view('client/show');
+        return view('client/show', ['titles' => $this->titles ]);
     }
 }
