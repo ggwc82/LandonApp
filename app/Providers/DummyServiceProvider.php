@@ -7,24 +7,24 @@ use Illuminate\Support\ServiceProvider;
 class DummyServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap services.
+     * Bootstrap the application services.
      *
      * @return void
      */
     public function boot()
     {
         //
-        // echo "Dummy Boot";
+        //echo 'Boot';
     }
 
     /**
-     * Register services.
+     * Register the application services.
      *
      * @return void
      */
     public function register()
     {
         //
-        // echo "Dummy Register";
+        //echo 'Register';
     }
 }

@@ -20,9 +20,27 @@ class ClientController extends Controller
 
     public function index()
     {
-        return view('client/index');       
+        $data = [];
+
+        $obj = new \stdClass;
+        $obj->id = 1;
+        $obj->title = 'mr';
+        $obj->name = 'john';
+        $obj->last_name = 'doe';
+        $obj->email = 'john@domain.com';
+        $data['clients'][] = $obj;
+  
+        $obj = new \stdClass;
+        $obj->id = 2;
+        $obj->title = 'ms';
+        $obj->name = 'jane';
+        $obj->last_name = 'doe';
+        $obj->email = 'jane@another-domain.com';
+        $data['clients'][] = $obj;
+
+        return view('client/index', $data);
     }
-    
+
     public function newClient()
     {
         return view('client/newClient');
@@ -30,12 +48,7 @@ class ClientController extends Controller
 
     public function create()
     {
-        return view('client/create');
-    }
-
-    public function modify()
-    {
-        return view('client/modify');
+            return view('client/create');
     }
 
     public function show($client_id)

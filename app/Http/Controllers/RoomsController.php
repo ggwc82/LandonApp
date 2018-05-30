@@ -11,5 +11,4 @@ class RoomsController extends Controller
     {
         return view('rooms/checkAvailableRooms');
     }
-
 }
