@@ -7,8 +7,20 @@ use Illuminate\Http\Request;
 class RoomsController extends Controller
 {
     //
-    public function checkAvailableRooms()
+    public function checkAvailableRooms($client_id, Request $request)
     {
-        return view('rooms/checkAvailableRooms');
+        $dateFrom = $request->input('dateFrom');
+        $dateTo = $request->input('dateTo');
+        $client = new Client();
+        $room = new Room();
+
+        //pass the data to the view
+        $data = [];
+        $data['dateFrom'] = $dateFrom;
+        $data['dateTo'] = $dateTo;
+        $data['rooms'] = $room->getAvailableRooms($dateFrom, $dateTo);
+        $data['client'] = $client->find($client_id);
+
+        return view('rooms/checkAvailableRooms', $data);
     }
 }
