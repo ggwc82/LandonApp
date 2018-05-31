@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Client;
+use App\Room;
 
 class RoomsController extends Controller
 {
@@ -14,11 +16,10 @@ class RoomsController extends Controller
         $client = new Client();
         $room = new Room();
 
-        //pass the data to the view
         $data = [];
         $data['dateFrom'] = $dateFrom;
         $data['dateTo'] = $dateTo;
-        $data['rooms'] = $room->getAvailableRooms($dateFrom, $dateTo);
+        $data['rooms']= $room->getAvailableRooms($dateFrom, $dateTo);
         $data['client'] = $client->find($client_id);
 
         return view('rooms/checkAvailableRooms', $data);

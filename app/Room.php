@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\support\facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class Room extends Model
 {
